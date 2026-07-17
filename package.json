@@ -1,0 +1,20 @@
+{
+  "name": "cypress-amazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "npx cypress run --browser electron --headless"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.18.1"
+  },
+  "allowScripts": {
+    "cypress@15.18.1": true
+  }
+}
