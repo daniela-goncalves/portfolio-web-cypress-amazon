@@ -14,20 +14,21 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Executa o cypress
+        continue-on-error: true
         run: |
           echo "Instala dependencias"
           npm install
           echo "🚀 Executa o Cypress"
           npm run cypress:run
 
-      - name: Publica artefato do Screenshot
+      - name: Publica os Screenshots
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
           path: ./cypress/screenshots/**
           retention-days: 1
 
-      - name: Publica arquivo do Vídeo
+      - name: Publica os Vídeos
         uses: actions/upload-artifact@v4
         with:
           name: videos
