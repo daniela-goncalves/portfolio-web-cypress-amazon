@@ -1,0 +1,35 @@
+name: Cypress CI/CD Pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  executa-cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixa o repositorio
+        uses: actions/checkout@v4
+
+      - name: Executa o cypress
+        run: |
+          echo "Instala dependencias"
+          npm install
+          echo "🚀 Executa o Cypress"
+          npm run cy:run-all
+
+      - name: Publica artefato do Screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: ./cypress/screenshots/**
+          retention-days: 1
+
+      - name: Publica arquivo do Vídeo
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: ./cypress/videos/**
+          retention-days: 1
