@@ -5,7 +5,7 @@ module.exports = defineConfig({
 
   e2e: {
     pageLoadTimeout: 90000,
-    defaultCommandTimeout: 90000,
+    defaultCommandTimeout: 30000,
     chromeWebSecurity: false,
     video: true,
 
