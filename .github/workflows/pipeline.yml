@@ -18,7 +18,7 @@ jobs:
           echo "Instala dependencias"
           npm install
           echo "🚀 Executa o Cypress"
-          npm run cy:run-all
+          npm run cypress:run
 
       - name: Publica artefato do Screenshot
         uses: actions/upload-artifact@v4
